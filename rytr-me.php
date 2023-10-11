@@ -22,17 +22,8 @@ include_once(__DIR__ . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'base
 include_once(__DIR__ . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'api.php');
 
 
-//$mdl = new Rcurl();
-//$mdl->login();
-//$ddd  = $mdl->post('languageList');
 
-
-//$mdl1 = new Rcurl();
-//$ddd =  $mdl->get('https://app.rytr.me/account');
-//$ddd =  $mdl->cookie_path;
-//print_r($ddd);
-//die;
-function RytMeGetOptions()
+function RytMeGetOptions() 
 {
     $defaults = array(
         'login' => '',
