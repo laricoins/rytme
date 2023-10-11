@@ -19,4 +19,9 @@ cont  https://t.me/ddnitecry
 
 **Important note:** To avoid any confusion need register on https://rytr.me/  via email + pswd
 
+== Screenshots ==
 
+== Installation ==
+
+1. Upload the `plugin` folder to the `/wp-content/plugins/` directory
+1. Activate the plugin through the 'Plugins' menu in WordPress
