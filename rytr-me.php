@@ -3,7 +3,7 @@
  * Plugin Name: Ryt ME
  * Plugin URI: https://github.com/laricoins/rytme
  * Description: Ryt ME plugin
- * Version: 0.22
+ * Version: 1.0.0
  * Text Domain: rytme
  * Domain Path: /languages
  * Author: ddnitecry
