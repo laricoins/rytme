@@ -53,7 +53,7 @@ class RytMeConfiguration {
         }
         $errors = [];
         if (isset($_POST['rytme_options'])) {
-            if (empty($_POST['main_settings']) || !wp_verify_nonce($_POST['main_settings'], 'rytme-settings')) {
+            if (empty($_POST['main_settings']) || !wp_verify_nonce(sanitize_text_field( wp_unslash ($_POST['main_settings'])), 'rytme-settings')) {
                 echo '<div class="rytme_saved_wrap"><span class="material-icons"> done </span> ' . esc_html__('rytme settings saved!', 'rytme') . '</div>';
                 die();
             }
@@ -77,13 +77,13 @@ class RytMeConfiguration {
     public function enqueueScripts() {
         global $current_screen;
         if (!empty($current_screen) && $current_screen->id === 'toplevel_page_rytme') {
-            wp_register_script('vue-js1', '//cdn.jsdelivr.net/npm/vue/dist/vue.js', [], '', true);
-            wp_register_script('bootstrap-vue', '//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js', [], '', true);
+            wp_register_script('vue-js1', RYTME_PLUGIN_URL . 'assets/js/vue.js',  [], '', true);
+            wp_register_script('bootstrap-vue', RYTME_PLUGIN_URL . 'assets/js/bootstrap-vue.js', [], '', true);
             // your app code
             wp_register_script('my-app', RYTME_PLUGIN_URL . 'assets/js/my-app.js', [], mt_rand(9999, 999999), true);
-            wp_enqueue_script('vue-js1', '//cdn.jsdelivr.net/npm/vue/dist/vue.js', [], '', true);
-		  wp_enqueue_script('vue-json-excel', '//cdn.jsdelivr.net/npm/vue-json-excel@0.3.0/dist/vue-json-excel.umd.min.js', [], '', true);
-		  wp_enqueue_script('bootstrap-vue-icons', '//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js', [], '', true);
+            wp_enqueue_script('vue-js1');
+		  wp_enqueue_script('vue-json-excel', RYTME_PLUGIN_URL . 'assets/js/vue-json-excel.umd.min.js', [], '', true);
+		  wp_enqueue_script('bootstrap-vue-icons', RYTME_PLUGIN_URL . 'assets/js/bootstrap-vue-icons.min.js', [], '', true);
 			
 			
             wp_enqueue_script('bootstrap-vue');
@@ -91,8 +91,8 @@ class RytMeConfiguration {
             wp_enqueue_script('my-app');
             wp_enqueue_style("admin_css", RYTME_PLUGIN_URL . "css/admin.css");
             wp_enqueue_style("font_awesome_css", RYTME_PLUGIN_URL . "css/font-awesome.css");
-            wp_enqueue_style("bootstrap.min-css", "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css");
-            wp_enqueue_style("bootstrap-vue-css", "//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css");
+            wp_enqueue_style("bootstrap.min-css", RYTME_PLUGIN_URL . "assets/css/bootstrap.min.css");
+            wp_enqueue_style("bootstrap-vue-css",RYTME_PLUGIN_URL . "assets/css/bootstrap-vue.css");
          //   wp_enqueue_script('rytme-admin', RYTME_PLUGIN_URL . "assets/js/admin.js", array('jquery'), mt_rand(9999, 999999), true);
           //  wp_localize_script('rytme-admin', 'api_object', ['ajax_url' => admin_url('admin-ajax.php'), 'security' => wp_create_nonce('api-nonce'), ]);
         }

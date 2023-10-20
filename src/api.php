@@ -158,6 +158,19 @@ add_action('wp_ajax_rytm_data_get_content', function ()
 	$data =$mdl->post('generateExecute',$params);
 
 	$dataRes1= json_decode($data);
+	if (!isset($dataRes1->data)){
+		$error = [];
+		$error['success']=true;
+		$error['data']['content']=__('Error generate, change title or Enter starttext text ...  try letter', 'rytme');
+		
+
+		wp_send_json_success(json_encode($error)); 
+		wp_die(); 
+	}
+		
+
+	
+	
 	$src = $dataRes1->data->content;
 	$driveId = $dataRes1->data->driveIdFileNew;
 	preg_match_all('%(?<=<p>)(.+?)(?=</p>)%sm', $src, $matches);
