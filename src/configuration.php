@@ -53,8 +53,8 @@ class RytMeConfiguration {
         }
         $errors = [];
         if (isset($_POST['rytme_options'])) {
-            if (empty($_POST['main_settings']) || !wp_verify_nonce(sanitize_text_field( wp_unslash ($_POST['main_settings'])), 'rytme-settings')) {
-                echo '<div class="rytme_saved_wrap"><span class="material-icons"> done </span> ' . esc_html__('rytme settings saved!', 'rytme') . '</div>';
+            if (empty($_POST['main_settings']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['main_settings'])), 'rytme-settings')) {
+                echo '<div class="rytme_saved_wrap"><span class="material-icons"> ' . esc_html__('done', 'rytme') . ' </span> ' . esc_html__('rytme settings saved!', 'rytme') . '</div>';
                 die();
             }
             $login = sanitize_text_field($_POST['rytme_options']['login']);
@@ -63,12 +63,11 @@ class RytMeConfiguration {
             $rytme_options = array('login' => $login, 'pwsd' => $pwsd, 'fp' => $fp,);
             update_option('rytme_options', $rytme_options);
             echo '<div class="updated notice notice-success is-dismissible"><p>' . esc_html__('Settings saved!', 'rytme') . '</p> <button type="button" class="notice-dismiss">
-      <span class="screen-reader-text">Dismiss this notice.</span>
+      <span class="screen-reader-text">' . esc_html__('Dismiss this notice.', 'rytme') . '</span>
       </button></div>';
         }
         require_once (RYTME_PLUGIN_PATH . 'src/admin/views' . DIRECTORY_SEPARATOR . 'view.php');
     }
-   
     /**
      * Enqueue scripts
      *
@@ -77,24 +76,23 @@ class RytMeConfiguration {
     public function enqueueScripts() {
         global $current_screen;
         if (!empty($current_screen) && $current_screen->id === 'toplevel_page_rytme') {
-            wp_register_script('vue-js1', RYTME_PLUGIN_URL . 'assets/js/vue.js',  [], '', true);
+            wp_register_script('vue-js1', RYTME_PLUGIN_URL . 'assets/js/vue.js', [], '', true);
             wp_register_script('bootstrap-vue', RYTME_PLUGIN_URL . 'assets/js/bootstrap-vue.js', [], '', true);
             // your app code
             wp_register_script('my-app', RYTME_PLUGIN_URL . 'assets/js/my-app.js', [], mt_rand(9999, 999999), true);
             wp_enqueue_script('vue-js1');
-		  wp_enqueue_script('vue-json-excel', RYTME_PLUGIN_URL . 'assets/js/vue-json-excel.umd.min.js', [], '', true);
-		  wp_enqueue_script('bootstrap-vue-icons', RYTME_PLUGIN_URL . 'assets/js/bootstrap-vue-icons.min.js', [], '', true);
-			
-			
+            wp_enqueue_script('vue-json-excel', RYTME_PLUGIN_URL . 'assets/js/vue-json-excel.umd.min.js', [], '', true);
+            wp_enqueue_script('bootstrap-vue-icons', RYTME_PLUGIN_URL . 'assets/js/bootstrap-vue-icons.min.js', [], '', true);
             wp_enqueue_script('bootstrap-vue');
-			    wp_localize_script('my-app', 'appm', ['ajax_url' => admin_url('admin-ajax.php'), 'security' => wp_create_nonce('api-nonce'), ]);
+            wp_localize_script('my-app', 'appm', ['ajax_url' => admin_url('admin-ajax.php'), 'security' => wp_create_nonce('api-nonce'), ]);
             wp_enqueue_script('my-app');
             wp_enqueue_style("admin_css", RYTME_PLUGIN_URL . "css/admin.css");
             wp_enqueue_style("font_awesome_css", RYTME_PLUGIN_URL . "css/font-awesome.css");
             wp_enqueue_style("bootstrap.min-css", RYTME_PLUGIN_URL . "assets/css/bootstrap.min.css");
-            wp_enqueue_style("bootstrap-vue-css",RYTME_PLUGIN_URL . "assets/css/bootstrap-vue.css");
-         //   wp_enqueue_script('rytme-admin', RYTME_PLUGIN_URL . "assets/js/admin.js", array('jquery'), mt_rand(9999, 999999), true);
-          //  wp_localize_script('rytme-admin', 'api_object', ['ajax_url' => admin_url('admin-ajax.php'), 'security' => wp_create_nonce('api-nonce'), ]);
+            wp_enqueue_style("bootstrap-vue-css", RYTME_PLUGIN_URL . "assets/css/bootstrap-vue.css");
+            //   wp_enqueue_script('rytme-admin', RYTME_PLUGIN_URL . "assets/js/admin.js", array('jquery'), mt_rand(9999, 999999), true);
+            //  wp_localize_script('rytme-admin', 'api_object', ['ajax_url' => admin_url('admin-ajax.php'), 'security' => wp_create_nonce('api-nonce'), ]);
+            
         }
     }
 }

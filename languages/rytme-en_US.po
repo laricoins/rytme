@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ryt ME\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-01 07:32+0000\n"
+"PO-Revision-Date: 2023-11-01 07:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: English (United States)\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.6; wp-6.3.2\n"
+"X-Domain: rytme"
+
+#: src/admin/views/view.php:47
+msgid "Bulck text Generator"
+msgstr ""
+
+#: src/api.php:36
+msgid "Data Load"
+msgstr ""
+
+#: src/api.php:52
+msgid "Data Saved ..."
+msgstr ""
+
+#. Author of the plugin
+msgid "ddnitecry"
+msgstr ""
+
+#: src/configuration.php:66
+msgid "Dismiss this notice."
+msgstr ""
+
+#: src/configuration.php:57
+msgid "done"
+msgstr ""
+
+#: src/admin/views/view.php:51
+msgid "Enter count text"
+msgstr ""
+
+#: src/admin/views/view.php:38
+msgid "Enter fb"
+msgstr ""
+
+#: src/admin/views/view.php:17
+msgid "Enter Login"
+msgstr ""
+
+#: src/admin/views/view.php:27 src/admin/views/view.php:30
+msgid "Enter Password"
+msgstr ""
+
+#: src/admin/views/view.php:54
+msgid "Enter starttext text"
+msgstr ""
+
+#: src/api.php:124
+msgid "Error generate, change title or Enter starttext text ...  try letter"
+msgstr ""
+
+#: src/admin/views/view.php:80
+msgid "Export To CsV"
+msgstr ""
+
+#: src/admin/views/view.php:84
+msgid "Export To Excel"
+msgstr ""
+
+#: src/admin/views/view.php:35
+msgid "fp"
+msgstr ""
+
+#: src/admin/views/view.php:9
+msgid "General tings"
+msgstr ""
+
+#: src/admin/views/view.php:73
+msgid "Get Content"
+msgstr ""
+
+#: src/admin/views/view.php:68
+msgid "Get Title"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/laricoins/rytme"
+msgstr ""
+
+#: src/api.php:5 src/api.php:32 src/api.php:43 src/api.php:59 src/api.php:72
+#: src/api.php:102
+msgid "Invalid security token sent."
+msgstr ""
+
+#: src/admin/views/view.php:14
+msgid "Login"
+msgstr ""
+
+#: src/admin/views/view.php:21
+msgid "Login from  https://rytr.me/ "
+msgstr ""
+
+#. Name of the plugin
+msgid "Ryt ME"
+msgstr ""
+
+#. Description of the plugin
+msgid "Ryt ME plugin"
+msgstr ""
+
+#: src/configuration.php:57
+msgid "rytme settings saved!"
+msgstr ""
+
+#: src/admin/views/view.php:42
+msgid "Save"
+msgstr ""
+
+#: src/configuration.php:65
+msgid "Settings saved!"
+msgstr ""
+
+#: src/admin/views/view.php:43
+msgid "Validate Cred"
+msgstr ""

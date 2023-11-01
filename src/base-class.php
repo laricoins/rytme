@@ -1,13 +1,13 @@
 <?php
 defined('ABSPATH') || die('');
 
-class Rcurl
+class RytmeCurl
 {
 
     public $aux_url = 'https://api.rytr.me/';
 
 
-    public function login()
+    public function rytme_login()
     {
         $rytme_options = get_option('rytme_options');
         $email = $rytme_options['login'];
@@ -43,7 +43,7 @@ class Rcurl
 languageList  -- список языков
 
 */
-    public function post($operation,$params='')
+    public function rytme_post($operation,$params='')
     {
         $rytme_options = get_option('rytme_options');
         $token = $rytme_options['token'];

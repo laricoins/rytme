@@ -109,6 +109,18 @@
 				</div>
             </template>
          </b-tab>
+		 
+		  <b-tab  title="<?php esc_html_e('Help', 'rytme'); ?>">
+            <template>
+			                  <div class="row g-3 align-items-center mb-5">
+
+                     <div class="col-12">
+					 <?php esc_html_e('Need help? ==>  https://t.me/ddnitecry', 'rytme'); ?>
+                      
+                     </div>
+                  </div>
+			</template>
+         </b-tab>
       </b-tabs>
 	  
 	  
