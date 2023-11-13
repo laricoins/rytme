@@ -113,7 +113,7 @@ add_action('wp_ajax_rytm_data_get_content', function () {
     $toneId = end($toneId)->_id;
     $params["toneId"] = $toneId;
     $params["languageId"] = sanitize_text_field($_POST['languageId']);
-    $params["contextInputs"] = ['SECTION_TOPIC_LABEL' => $_POST['title'], 'SECTION_KEYWORDS_LABEL' => sanitize_text_field($_POST['starttext']) ];
+    $params["contextInputs"] = ['SECTION_TOPIC_LABEL' => sanitize_text_field($_POST['title']), 'SECTION_KEYWORDS_LABEL' => sanitize_text_field($_POST['starttext']) ];
     $params["variations"] = 1;
     $params["creativityLevel"] = "default";
     $data = $mdl->rytme_post('generateExecute', $params);
